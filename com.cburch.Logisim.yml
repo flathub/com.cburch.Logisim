@@ -1,6 +1,6 @@
 app-id: com.cburch.Logisim
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: 25.08
 sdk: org.freedesktop.Sdk
 command: logisim
 sdk-extensions:
@@ -23,24 +23,23 @@ modules:
     buildsystem: simple
     build-commands:
       - install -D logisim /app/bin/logisim
-      - install -D "logisim-generic-2.7.1.jar" /app/share/logisim.jar
-      - install -Dm644 com.cburch.Logisim.svg /app/share/icons/hicolor/scalable/apps/com.cburch.Logisim.svg
-      - install -Dm644 com.cburch.Logisim.desktop /app/share/applications/com.cburch.Logisim.desktop
-      - install -Dm644 com.cburch.Logisim.metainfo.xml /app/share/metainfo/com.cburch.Logisim.metainfo.xml
+      - install -D logisim-generic-2.7.1.jar /app/share/logisim.jar
+      - install -Dm644 com.cburch.Logisim.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 com.cburch.Logisim.desktop -t /app/share/applications/
+      - install -Dm644 com.cburch.Logisim.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: script
         dest-filename: logisim
         commands:
           - exec java -jar /app/share/logisim.jar 
       - type: file
-        url: "https://sourceforge.net/projects/circuit/files/2.7.x/2.7.1/logisim-generic-2.7.1.jar"
+        url: https://sourceforge.net/projects/circuit/files/2.7.x/2.7.1/logisim-generic-2.7.1.jar
         sha256: 362a78c12ad18c203fed868872c4a01cd9c12141379d92e892bbe2c37e627bc2
       - type: file
-        url: "https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.svg"
+        url: https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.svg
         sha256: 05116384c83f3d5676c4d34cfa968619a5a84d13da4a85a918fb0df21fde359d 
       - type: file
-        url: "https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.desktop"
+        url: https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.desktop
         sha256: 2f1fe567ec45f0e82e963f72d4b113581a56a14b4c0941544b34e6f582f77dea 
       - type: file
-        url: "https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.metainfo.xml"
-        sha256: eda9104028fa7cd39a858c59e673a43b8a556e999383ba0a0a5a5427ac275d39 
+        path: com.cburch.Logisim.metainfo.xml
